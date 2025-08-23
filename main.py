@@ -42,28 +42,35 @@ def main():
 
     feedback_text = st.text_area("Enter customer feedback to extract sentiment, topics, and actionable items.")
 
-    if st.button("Analyze Feedback"):
-        if not feedback_text.strip():
-            st.warning("Please enter some feedback text.")
-        else:
-            # Show loading spinner while analyzing
-            with st.spinner("Analyzing feedback with AI..."):
-                try:
-                    # Analyze feedback using OpenAI structured output
-                    analysis = analyze_feedback(feedback_text)
-                    
-                    if analysis:
-                        st.success("✅ Analysis completed successfully!")
-                        st.subheader("Structured Feedback Output")
-                        st.json(json.loads(analysis.json()))
-                    
-                    else:
-                        st.error("❌ Failed to analyze feedback. Please check your API key and try again.")
-                        
-                except Exception as e:
-                    st.error(f"❌ An error occurred: {str(e)}")
-                    st.info("💡 Make sure you have set your OPENAI_API_KEY in the .env file")
+    col1, col2 = st.columns([1,5])
     
+    with col1:
+        if st.button("Analyze Feedback", help="Analyze the feedback text with AI"):
+            if not feedback_text.strip():
+                st.warning("Please enter some feedback text.")
+            else:
+                # Show loading spinner while analyzing
+                with st.spinner("Analyzing feedback with AI..."):
+                    try:
+                        # Analyze feedback using OpenAI structured output
+                        analysis = analyze_feedback(feedback_text)
+                        
+                        if analysis:
+                            st.success("✅ Analysis completed successfully!")
+                            st.subheader("Structured Feedback Output")
+                            st.json(json.loads(analysis.json()))
+                        
+                        else:
+                            st.error("❌ Failed to analyze feedback. Please check your API key and try again.")
+                            
+                    except Exception as e:
+                        st.error(f"❌ An error occurred: {str(e)}")
+                        st.info("💡 Make sure you have set your OPENAI_API_KEY in the .env file")
+
+    with col2:
+        if st.button("Clear All", help="Clear the text area and any previous results"):
+            st.rerun()
+
     create_footer()
 
 
