@@ -1,12 +1,69 @@
 [project]
 name = "ai-customer-feedback-analyzer"
 version = "1.0.0"
-description = "Add your description here"
+description = "A powerful AI-powered customer feedback analyzer built with Streamlit. Features intelligent sentiment analysis, actionable item extraction, and structured feedback insights using OpenAI's GPT models. Perfect for businesses seeking to systematically analyze customer feedback with automated categorization, priority assessment, and actionable recommendations."
 readme = "README.md"
 requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "ysskrishna", email = "sivasaikrishnassk@gmail.com"}
+]
+keywords = [
+    "ai",
+    "customer-feedback",
+    "sentiment-analysis",
+    "openai",
+    "gpt",
+    "streamlit",
+    "web-app",
+    "feedback-analysis",
+    "nlp",
+    "natural-language-processing",
+    "customer-insights",
+    "business-intelligence",
+    "actionable-items",
+    "priority-assessment",
+    "feedback-categorization",
+    "customer-service",
+    "product-feedback",
+    "user-experience",
+    "ai-analysis",
+    "structured-output",
+    "pydantic",
+    "python",
+    "open-source",
+    "ysskrishna"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Other Audience",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Environment :: Web Environment",
+    "Framework :: Streamlit",
+    "Natural Language :: English",
+    "Typing :: Typed",
+]
 dependencies = [
     "openai>=1.52.2",
     "pydantic>=2.9.2",
     "python-dotenv>=1.1.1",
     "streamlit>=1.47.1",
 ]
+
+[project.urls]
+Homepage = "https://github.com/ysskrishna/ai-customer-feedback-analyzer"
+Repository = "https://github.com/ysskrishna/ai-customer-feedback-analyzer.git"
+Documentation = "https://github.com/ysskrishna/ai-customer-feedback-analyzer#readme"
+Issues = "https://github.com/ysskrishna/ai-customer-feedback-analyzer/issues"
