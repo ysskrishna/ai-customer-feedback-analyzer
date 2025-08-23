@@ -11,5 +11,5 @@ class ActionableItem(BaseModel):
 class FeedbackAnalysis(BaseModel):
     original_text: str
     sentiment: SentimentType
-    actionable_items = List[ActionableItem]
+    actionable_items: List[ActionableItem]
 
