@@ -1,6 +1,6 @@
 import streamlit as st
 import json
-from ai.models import FeedbackAnalysis, ActionableItem, ActionItemPriorityType, TopicType, SentimentType
+from ai.analyzer import analyze_feedback
 
 
 def create_footer():
@@ -46,22 +46,23 @@ def main():
         if not feedback_text.strip():
             st.warning("Please enter some feedback text.")
         else:
-            # TODO: Replace with OpenAI API call
-            example_output = FeedbackAnalysis(
-                original_text=feedback_text,
-                sentiment=SentimentType.POSITIVE,
-                actionable_items=[
-                    ActionableItem(
-                        action="Improve delivery speed",
-                        priority=ActionItemPriorityType.HIGH,
-                        category=TopicType.DELIVERY,
-                        reasoning="Customer mentioned slow delivery."
-                    )
-                ]
-            )
-
-            st.subheader("Structured Feedback Output")
-            st.json(json.loads(example_output.json()))
+            # Show loading spinner while analyzing
+            with st.spinner("Analyzing feedback with AI..."):
+                try:
+                    # Analyze feedback using OpenAI structured output
+                    analysis = analyze_feedback(feedback_text)
+                    
+                    if analysis:
+                        st.success("✅ Analysis completed successfully!")
+                        st.subheader("Structured Feedback Output")
+                        st.json(json.loads(analysis.json()))
+                    
+                    else:
+                        st.error("❌ Failed to analyze feedback. Please check your API key and try again.")
+                        
+                except Exception as e:
+                    st.error(f"❌ An error occurred: {str(e)}")
+                    st.info("💡 Make sure you have set your OPENAI_API_KEY in the .env file")
     
     create_footer()
 
