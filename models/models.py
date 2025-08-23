@@ -1,6 +1,6 @@
 from typing import List
 from pydantic import BaseModel
-from ai.enums import ActionItemPriorityType, TopicType, SentimentType
+from models.enums import ActionItemPriorityType, TopicType, SentimentType
 
 class ActionableItem(BaseModel): 
     action: str
@@ -9,7 +9,6 @@ class ActionableItem(BaseModel):
     reasoning: str
 
 class FeedbackAnalysis(BaseModel):
-    original_text: str
     sentiment: SentimentType
     actionable_items: List[ActionableItem]
 
