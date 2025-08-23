@@ -1,7 +1,7 @@
 [project]
 name = "ai-customer-feedback-analyzer"
 version = "1.0.0"
-description = "A powerful AI-powered customer feedback analyzer built with Streamlit. Features intelligent sentiment analysis, actionable item extraction, and structured feedback insights using OpenAI's GPT models. Perfect for businesses seeking to systematically analyze customer feedback with automated categorization, priority assessment, and actionable recommendations."
+description = "A powerful AI-powered customer feedback analyzer built with Streamlit. Features intelligent sentiment analysis, actionable item extraction, and structured feedback insights using OpenAI's Structured Outputs with Pydantic models. Perfect for businesses seeking to systematically analyze customer feedback with automated categorization, priority assessment, and actionable recommendations."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
@@ -56,8 +56,8 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "openai>=1.52.2",
-    "pydantic>=2.9.2",
+    "openai>=1.52.2",  # Required for structured outputs with responses.parse()
+    "pydantic>=2.9.2",  # Required for data validation and type safety
     "python-dotenv>=1.1.1",
     "streamlit>=1.47.1",
 ]

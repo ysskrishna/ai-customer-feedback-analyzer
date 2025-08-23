@@ -7,7 +7,7 @@
 [![UV](https://img.shields.io/badge/UV-Package%20Manager-green.svg)](https://docs.astral.sh/uv/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A powerful, AI-powered customer feedback analyzer built with Streamlit and OpenAI's GPT Models. Features intelligent sentiment analysis, actionable item extraction, and structured feedback insights. Perfect for businesses seeking to systematically analyze customer feedback with automated categorization, priority assessment, and actionable recommendations.
+A powerful AI-powered customer feedback analyzer built with Streamlit and OpenAI's GPT Models. Features intelligent sentiment analysis, actionable item extraction, and structured insights using OpenAI's **Structured Outputs** with Pydantic models. Perfect for businesses seeking to systematically process customer feedback with automated categorization, priority assessment, and actionable recommendations.
 
 
 ## 📌 Features
@@ -27,9 +27,11 @@ A powerful, AI-powered customer feedback analyzer built with Streamlit and OpenA
   - Suggestions
   - Other
 
-### **Structured Output**
+### **Structured Outputs with Pydantic**
 
-- **JSON Format**: Clean, structured data for easy integration
+- **Guaranteed JSON Structure**: Uses OpenAI's structured outputs to ensure consistent, valid JSON responses
+- **Type Safety**: Pydantic models provide runtime validation and type checking
+- **Reliable Parsing**: No more parsing errors or malformed JSON responses
 - **Priority Assessment**: Intelligent prioritization based on impact and severity
 - **Evidence-Based Reasoning**: Each actionable item includes concrete reasoning from the feedback
 - **Concise Insights**: Maximum 5 actionable items per analysis to focus on what matters most
@@ -38,8 +40,8 @@ A powerful, AI-powered customer feedback analyzer built with Streamlit and OpenA
 
 * **Python 3.11+**
 * **Streamlit** (Web UI)
-* **OpenAI GPT-4o** (AI Analysis)
-* **Pydantic** (Data Validation)
+* **OpenAI GPT-4o** (AI Analysis with Structured Outputs)
+* **Pydantic 2.9+** (Data Validation & Type Safety)
 * **Python-dotenv** (Environment Management)
 * **UV** (Package Management)
 
@@ -104,6 +106,10 @@ ai-customer-feedback-analyzer/
 ├── pyproject.toml             # Project configuration and dependencies
 └── README.md                  # This file
 ```
+
+## Additional resources
+
+For more details, see [OpenAI's Structured Outputs Documentation](https://platform.openai.com/docs/guides/structured-outputs).
 
 ## 🤝 Contributing
 
