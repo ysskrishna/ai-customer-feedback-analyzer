@@ -9,6 +9,8 @@
 
 A powerful AI-powered customer feedback analyzer built with Streamlit and OpenAI's GPT Models. Features intelligent sentiment analysis, actionable item extraction, and structured insights using OpenAI's **Structured Outputs** with Pydantic models. Perfect for businesses seeking to systematically process customer feedback with automated categorization, priority assessment, and actionable recommendations.
 
+![AI Customer Feedback Analyzer](media/og.png)
+
 
 ## 📌 Features
 
@@ -35,6 +37,10 @@ A powerful AI-powered customer feedback analyzer built with Streamlit and OpenAI
 - **Priority Assessment**: Intelligent prioritization based on impact and severity
 - **Evidence-Based Reasoning**: Each actionable item includes concrete reasoning from the feedback
 - **Concise Insights**: Maximum 5 actionable items per analysis to focus on what matters most
+
+## 📸 Demo
+
+![AI Customer Feedback Analyzer Demo](media/demo.png)
 
 ## 🛠 Tech Stack
 
