@@ -1,19 +1,22 @@
 CUSTOMER_FEEDBACK_ANALYSIS_PROMPT = """
-You are an expert customer feedback analyst. Your task is to analyze customer feedback and provide actionable insights.
-
-Analyze the following customer feedback text and provide:
-1. Overall sentiment (positive, negative, or neutral)
-2. Actionable items with priorities and categories
-3. Reasoning for each actionable item
+Analyze the following customer feedback and produce structured, actionable insights.
 
 Customer Feedback:
 {feedback_text}
 
-Guidelines:
-- Be objective and thorough in your analysis
-- Identify specific, actionable improvements
-- Prioritize items based on potential impact and urgency
-- Categorize items appropriately (product_quality, customer_service, pricing, delivery, user_experience, features, bugs, suggestions, other)
-- Provide clear reasoning for each actionable item
-- Focus on concrete, implementable suggestions
+Produce:
+1. Overall sentiment: one of [positive, negative, neutral]
+2. Actionable items: each with fields [action, priority, category, reasoning]
+
+Instructions:
+- Split distinct issues into separate items; merge duplicates.
+- Return at most 5 actionable items. If none are justified, return an empty list.
+- Prioritization rubric:
+  - high: severe breakage, blocks core flows, or impacts many users
+  - medium: noticeable friction with moderate impact
+  - low: minor polish or non-urgent improvements
+- Categories: product_quality, customer_service, pricing, delivery, user_experience, features, bugs, suggestions, other.
+- Reasoning must cite or paraphrase concrete evidence from the feedback; avoid speculation.
+- Be concise: one sentence for action and one for reasoning.
+- If the feedback is ambiguous or lacks detail, say so and keep priority low or skip.
 """

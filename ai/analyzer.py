@@ -9,7 +9,7 @@ def analyze_feedback(feedback_text: str) -> Optional[FeedbackAnalysis]:
     response = client.responses.parse(
         model="gpt-4o-2024-08-06",
         input=[
-            {"role": "system", "content": "You are an expert customer feedback analyst. Analyze the feedback and provide structured insights."},
+            {"role": "system", "content": "You are an expert customer feedback analyst."},
             {"role": "user", "content": CUSTOMER_FEEDBACK_ANALYSIS_PROMPT.format(feedback_text=feedback_text)}
         ],
         text_format=FeedbackAnalysis,
