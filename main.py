@@ -1,6 +1,7 @@
 import streamlit as st
 import json
 from ai.analyzer import analyze_feedback
+from core.csv_feedback import parse_feedback_csv
 
 
 def create_footer():
@@ -70,6 +71,38 @@ def main():
     with col2:
         if st.button("Clear All", help="Clear the text area and any previous results"):
             st.rerun()
+
+    st.divider()
+    st.subheader("Analyze Feedback CSV")
+    uploaded_file = st.file_uploader(
+        "Upload a CSV with feedback, Xquik-style text, review, comment, or message rows.",
+        type=["csv"],
+    )
+
+    if uploaded_file is not None and st.button("Analyze CSV Feedback"):
+        try:
+            feedback_rows, detected_column = parse_feedback_csv(uploaded_file.read())
+        except ValueError as validation_error:
+            st.error(str(validation_error))
+        else:
+            st.caption(f"Using '{detected_column}' as the feedback column.")
+            batch_results = []
+            with st.spinner("Analyzing uploaded feedback..."):
+                for feedback in feedback_rows:
+                    analysis = analyze_feedback(feedback)
+                    if analysis:
+                        batch_results.append(
+                            {
+                                "feedback": feedback,
+                                "analysis": json.loads(analysis.json()),
+                            }
+                        )
+
+            if batch_results:
+                st.success(f"Analyzed {len(batch_results)} feedback rows.")
+                st.json(batch_results)
+            else:
+                st.error("Failed to analyze the uploaded feedback rows.")
 
     create_footer()
 
