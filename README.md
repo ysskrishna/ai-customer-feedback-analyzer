@@ -6,6 +6,7 @@
 [![Pydantic](https://img.shields.io/badge/Pydantic-2.9+-orange.svg)](https://pydantic.dev/)
 [![UV](https://img.shields.io/badge/UV-Package%20Manager-green.svg)](https://docs.astral.sh/uv/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Author site](https://img.shields.io/badge/author-ysskrishna.space-informational)](https://ysskrishna.space)
 
 A powerful AI-powered customer feedback analyzer built with Streamlit and OpenAI's GPT Models. Features intelligent sentiment analysis, actionable item extraction, and structured insights using OpenAI's **Structured Outputs** with Pydantic models. Perfect for businesses seeking to systematically process customer feedback with automated categorization, priority assessment, and actionable recommendations.
 
@@ -125,13 +126,32 @@ For more details, see [OpenAI's Structured Outputs Documentation](https://platfo
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📜 License
+## Built and maintained by
 
-This project is released under the **MIT License**.
-See [LICENSE](LICENSE) for details.
+AI Customer Feedback Analyzer is built and maintained by:
 
-## 👨‍💻 Author
+| | Name | GitHub | Role |
+|---|------|--------|------|
+| <img src="https://github.com/ysskrishna.png?size=120" width="60" height="60" alt="Y. Siva Sai Krishna"> | **Y. Siva Sai Krishna** | [@ysskrishna](https://github.com/ysskrishna) | Creator |
 
-**Y. Siva Sai Krishna** ([@ysskrishna](https://github.com/ysskrishna))
+## Support
 
-Built with ❤️ for better customer understanding and business insights.
+If you find this project helpful:
+
+- ⭐ Star the repository
+- 🐛 [Report issues](https://github.com/ysskrishna/ai-customer-feedback-analyzer/issues)
+- 🔀 Submit pull requests
+- 💝 [Sponsor on GitHub](https://github.com/sponsors/ysskrishna)
+
+## License
+
+MIT © [Y. Siva Sai Krishna](https://github.com/ysskrishna) — see [LICENSE](LICENSE) for details.
+
+---
+
+<p align="left">
+  <a href="https://github.com/ysskrishna">Author's GitHub</a> •
+  <a href="https://linkedin.com/in/ysskrishna">Author's LinkedIn</a> •
+  <a href="https://ysskrishna.space">Author's site</a> •
+  <a href="https://github.com/ysskrishna/ai-customer-feedback-analyzer/issues">Report Issues</a>
+</p>
